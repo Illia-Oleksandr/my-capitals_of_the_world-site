@@ -1,0 +1,142 @@
+/* Main style for the body */
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #D35400; /* Dark orange background */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+/* Container for the question */
+#question-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #ffffff; /* White background for the container */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+#question-container:hover {
+    transform: scale(1.02);
+}
+
+/* Style for the question text */
+#question {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #D35400; /* Dark orange text */
+    font-weight: bold;
+}
+
+/* Style for the image container */
+#revealed-picture {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#revealed-picture img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#revealed-picture img:hover {
+    transform: scale(1.05);
+}
+
+/* Style for the answer input field */
+#answer {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #E67E22; /* Medium orange border */
+    border-radius: 8px;
+    font-size: 18px;
+    outline: none;
+    background-color: #FDEBD0; /* Light orange background */
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+#answer:focus {
+    border-color: #D35400; /* Dark orange border on focus */
+}
+
+/* Style for the result */
+#result {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Style for the "Next Question" button */
+#next-button {
+    width: 50%; /* Make the button proportional to the image container */
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #E67E22; /* Medium orange button */
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#next-button:hover {
+    background-color: #D35400; /* Darker orange on hover */
+    transform: scale(1.05);
+}
+
+/* Style for the score display */
+#score {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #D35400; /* Dark orange text */
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    #question-container {
+        padding: 15px;
+    }
+
+    #question {
+        font-size: 20px;
+    }
+
+    #answer {
+        font-size: 16px;
+    }
+
+    #result, #score {
+        font-size: 16px;
+    }
+
+    #next-button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
