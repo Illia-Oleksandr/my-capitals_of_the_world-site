@@ -1,19 +1,19 @@
 const questions = [
     { country: "France", capital: "Paris", image: "images/Paris.png" },
-    { country: "Japan", capital: "Tokyo", image: "images/Tokyo.png" },
-    { country: "Brazil", capital: "Brasilia", image: "images/Brasilia.png" },
-    { country: "Canada", capital: "Ottawa", image: "images/Ottawa.png" },
-    { country: "Australia", capital: "Canberra", image: "images/Canberra.png" },
-    { country: "Germany", capital: "Berlin", image: "images/Berlin.png" },
-    { country: "India", capital: "New Delhi", image: "images/New-Delhi.png" },
-    { country: "China", capital: "Beijing", image: "images/Beijing.png" },
-    { country: "Italy", capital: "Rome", image: "images/Rome.png" },
-    { country: "United Kingdom", capital: "London", image: "images/London.png" },
-    { country: "Mexico", capital: "Mexico", image: "images/Mexico.png" },
-    { country: "South Africa", capital: "Pretoria", image: "images/Pretoria.png" },
-    { country: "South Korea", capital: "Seoul", image: "images/Seoul.png" },
-    { country: "Egypt", capital: "Cairo", image: "images/Cairo.png" },
-    { country: "Turkey", capital: "Ankara", image: "images/Ankara.png" }
+    // { country: "Japan", capital: "Tokyo", image: "images/Tokyo.png" },
+    // { country: "Brazil", capital: "Brasilia", image: "images/Brasilia.png" },
+    // { country: "Canada", capital: "Ottawa", image: "images/Ottawa.png" },
+    // { country: "Australia", capital: "Canberra", image: "images/Canberra.png" },
+    // { country: "Germany", capital: "Berlin", image: "images/Berlin.png" },
+    // { country: "India", capital: "New Delhi", image: "images/New-Delhi.png" },
+    // { country: "China", capital: "Beijing", image: "images/Beijing.png" },
+    // { country: "Italy", capital: "Rome", image: "images/Rome.png" },
+    // { country: "United Kingdom", capital: "London", image: "images/London.png" },
+    // { country: "Mexico", capital: "Mexico City", image: "images/Mexico.png" },
+    // { country: "South Africa", capital: "Pretoria", image: "images/Pretoria.png" },
+    // { country: "South Korea", capital: "Seoul", image: "images/Seoul.png" },
+    // { country: "Egypt", capital: "Cairo", image: "images/Cairo.png" },
+    // { country: "Turkey", capital: "Ankara", image: "images/Ankara.png" }
 ];
 
 let currentQuestionIndex = 0;
@@ -44,6 +44,7 @@ function showQuestion() {
     const img = document.getElementById("capital-image");
     img.src = questions[currentQuestionIndex].image;
     document.getElementById("next-button").style.display = "none";
+    document.getElementById("restart-button").style.display = "none";
     document.getElementById("answer").focus();
     updateScore();
 }
@@ -103,7 +104,21 @@ function restartQuiz() {
     currentQuestionIndex = 0;
     correctAnswers = 0;
     incorrectAnswers = 0;
+    document.getElementById("question-container").innerHTML = `
+        <div id="question"></div>
+        <div id="revealed-picture">
+            <img id="capital-image" src alt="Capital Image">
+        </div>
+        <input type="text" id="answer" placeholder="Your answer">
+        <div id="result"></div>
+        <button id="next-button" onclick="nextQuestion()" style="display: none;">&#8594;</button>
+        <div id="score"></div>
+        <button id="restart-button" onclick="restartQuiz()" style="display: none;">Restart Quiz</button>
+    `;
+    preloadImages();
     showQuestion();
+    document.getElementById("answer").addEventListener("keypress", handleKeyPress);
+    document.getElementById("answer").focus();
 }
 
 function updateScore() {

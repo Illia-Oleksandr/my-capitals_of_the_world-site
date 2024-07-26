@@ -114,9 +114,12 @@ body {
 }
 
 /* Style for the results container */
+#results-container {
+    text-align: center;
+}
+
 #results-container h2 {
     color: #D35400; /* Dark orange text */
-    font-size: 24px;
     margin-bottom: 20px;
 }
 
