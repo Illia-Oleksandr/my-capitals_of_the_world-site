@@ -113,6 +113,35 @@ body {
     color: #D35400; /* Dark orange text */
 }
 
+/* Style for the results container */
+#results-container h2 {
+    color: #D35400; /* Dark orange text */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#results-container p {
+    color: #333;
+    font-size: 18px;
+}
+
+#results-container button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #E67E22; /* Medium orange button */
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#results-container button:hover {
+    background-color: #D35400; /* Darker orange on hover */
+    transform: scale(1.05);
+}
+
 /* Responsive styles for mobile devices */
 @media (max-width: 600px) {
     body {
@@ -135,7 +164,7 @@ body {
         font-size: 16px;
     }
 
-    #next-button {
+    #next-button, #results-container button {
         padding: 10px 20px;
         font-size: 16px;
     }

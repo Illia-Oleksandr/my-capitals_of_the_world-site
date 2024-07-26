@@ -9,7 +9,7 @@ const questions = [
     { country: "China", capital: "Beijing", image: "images/Beijing.png" },
     { country: "Italy", capital: "Rome", image: "images/Rome.png" },
     { country: "United Kingdom", capital: "London", image: "images/London.png" },
-    { country: "Mexico", capital: "Mexico City", image: "images/Mexico.png" },
+    { country: "Mexico", capital: "Mexico", image: "images/Mexico.png" },
     { country: "South Africa", capital: "Pretoria", image: "images/Pretoria.png" },
     { country: "South Korea", capital: "Seoul", image: "images/Seoul.png" },
     { country: "Egypt", capital: "Cairo", image: "images/Cairo.png" },
@@ -94,6 +94,7 @@ function showResults() {
             <h2>Results</h2>
             <p>Correct answers: ${correctAnswers}</p>
             <p>Incorrect answers: ${incorrectAnswers}</p>
+            <button onclick="restartQuiz()">Restart Quiz</button>
         </div>
     `;
 }
